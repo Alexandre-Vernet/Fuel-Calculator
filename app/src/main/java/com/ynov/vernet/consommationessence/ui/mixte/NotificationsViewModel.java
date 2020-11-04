@@ -1,4 +1,4 @@
-package com.ynov.vernet.consommationessence.ui.notifications;
+package com.ynov.vernet.consommationessence.ui.mixte;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
