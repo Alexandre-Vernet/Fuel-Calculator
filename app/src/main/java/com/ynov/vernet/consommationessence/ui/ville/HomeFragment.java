@@ -35,7 +35,6 @@ public class HomeFragment extends Fragment {
 
         editTextDistance = getView().findViewById(R.id.editTextDistance);
 
-
         // Au clic du bouton valider
         view.findViewById(R.id.btnValider).setOnClickListener(v -> {
 
