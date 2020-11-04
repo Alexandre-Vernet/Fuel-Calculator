@@ -14,16 +14,16 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.ynov.vernet.consommationessence.R;
 
-public class HomeFragment extends Fragment {
+public class VilleFragment extends Fragment {
 
     EditText editTextDistance;
 
-    private HomeViewModel homeViewModel;
+    private VilleViewModel villeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        villeViewModel = new ViewModelProvider(this).get(VilleViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ville, container, false);
 
         return root;

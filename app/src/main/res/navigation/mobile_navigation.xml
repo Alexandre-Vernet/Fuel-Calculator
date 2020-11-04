@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.ynov.vernet.consommationessence.ui.ville.HomeFragment"
+        android:name="com.ynov.vernet.consommationessence.ui.ville.VilleFragment"
         android:label="Ville"
         tools:layout="@layout/fragment_ville" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.ynov.vernet.consommationessence.ui.autoroute.DashboardFragment"
+        android:name="com.ynov.vernet.consommationessence.ui.autoroute.AutorouteFragment"
         android:label="Autoroute"
         tools:layout="@layout/fragment_autoroute" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.ynov.vernet.consommationessence.ui.mixte.NotificationsFragment"
+        android:name="com.ynov.vernet.consommationessence.ui.mixte.MixteFragment"
         android:label="Mixte"
         tools:layout="@layout/fragment_mixte" />
 </navigation>

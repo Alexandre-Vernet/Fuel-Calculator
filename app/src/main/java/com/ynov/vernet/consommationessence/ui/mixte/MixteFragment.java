@@ -11,13 +11,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.ynov.vernet.consommationessence.R;
 
-public class NotificationsFragment extends Fragment {
+public class MixteFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private MixteViewModel mixteViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
+        mixteViewModel = new ViewModelProvider(this).get(MixteViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mixte, container, false);
         return root;
     }
