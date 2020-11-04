@@ -24,4 +24,25 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_ville, container, false);
         return root;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Au clic du bouton valider
+        view.findViewById(R.id.btnValider).setOnClickListener(v -> {
+
+            // Calcul de la consommation
+
+            // Afficher le résultat
+            new AlertDialog.Builder(getContext())
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .setTitle("Titre")
+                    .setMessage("Message")
+                    .setPositiveButton("Ok", (dialogInterface, i) -> {
+                    })
+                    .show();
+        });
+
+    }
 }
