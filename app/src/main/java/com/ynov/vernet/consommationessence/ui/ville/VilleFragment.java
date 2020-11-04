@@ -61,7 +61,7 @@ public class VilleFragment extends Fragment {
                 new AlertDialog.Builder(getContext())
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .setTitle("Calculateur")
-                        .setMessage("Votre trajet coûtera " + prix + " € \n Vous consommerez " + consommation + " L")
+                        .setMessage("Votre trajet coûtera " + prix + " € \nVous consommerez " + consommation + " L")
                         .setPositiveButton("Ok", (dialogInterface, i) -> {
                         })
                         .show();
