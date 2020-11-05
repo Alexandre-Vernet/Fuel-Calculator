@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <!--Ville-->
     <shortcut
         android:enabled="true"
@@ -25,9 +24,9 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.ynov.vernet.consommationessence.MainActivity"
+            android:targetClass="com.ynov.vernet.consommationessence.ui.autoroute.AutorouteFragment"
             android:targetPackage="com.ynov.vernet.consommationessence" />
-        <categories android:name="android.shortcut.conversation" />
+        <categories android:name="com.ynov.vernet.consommationessence.ui.autoroute.AutorouteFragment" />
     </shortcut>
 
 
@@ -40,9 +39,7 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.ynov.vernet.consommationessence.MainActivity"
+            android:targetClass="com.ynov.vernet.consommationessence.ui.mixte.MixteViewModel"
             android:targetPackage="com.ynov.vernet.consommationessence" />
     </shortcut>
-
-
 </shortcuts>
