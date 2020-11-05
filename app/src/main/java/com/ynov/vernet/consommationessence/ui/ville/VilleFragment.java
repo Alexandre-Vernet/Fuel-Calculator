@@ -38,23 +38,28 @@ public class VilleFragment extends Fragment {
 
         // Au clic du bouton valider
         view.findViewById(R.id.btnValider).setOnClickListener(v -> {
+
             // Si la zone est vide
             if (editTextDistance.getText().toString().isEmpty()) {
+
+                // Afficher un message d'erreur
                 editTextDistance.setError("Erreur");
                 new Handler().postDelayed(() -> {
                     editTextDistance.setError(null);
                 }, 2000);
+
+                // Sinon
             } else {
+
                 // Récupérer la valeur de la zone de texte en réel
-                String value = editTextDistance.getText().toString();
-                double finalValue = Integer.parseInt(value);
+                double valeur = Double.parseDouble(editTextDistance.getText().toString());
 
                 // Calcul du prix
-                double prix = finalValue * 1.5 / 12.82;
+                double prix = valeur * 1.5 / 12.82;
                 prix = Math.floor(prix * 100) / 100;                    /*2 chiffres après la virgule*/
 
                 // Calcul de la consommation
-                double consommation = finalValue * 1 / 12.82;
+                double consommation = valeur * 1 / 12.82;
                 consommation = Math.floor(consommation * 100) / 100;    /*2 chiffres après la virgule*/
 
                 // Afficher le résultat

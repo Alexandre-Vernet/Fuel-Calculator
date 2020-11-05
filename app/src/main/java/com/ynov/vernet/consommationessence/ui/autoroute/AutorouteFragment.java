@@ -1,6 +1,7 @@
 package com.ynov.vernet.consommationessence.ui.autoroute;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,27 +38,37 @@ public class AutorouteFragment extends Fragment {
         // Au clic du bouton valider
         view.findViewById(R.id.btnValider).setOnClickListener(v -> {
 
-            // Récupérer la valeur de la zone de texte en réel
-            String value = editTextDistance.getText().toString();
-            double finalValue = Integer.parseInt(value);
+            // Si la zone est vide
+            if (editTextDistance.getText().toString().isEmpty()) {
 
-            // Calcul du prix
-            double prix = finalValue * 1.5 / 21.71;
-            prix = Math.floor(prix * 100) / 100;                    /*2 chiffres après la virgule*/
+                // Afficher un message d'erreur
+                editTextDistance.setError("Erreur");
+                new Handler().postDelayed(() -> {
+                    editTextDistance.setError(null);
+                }, 2000);
 
-            // Calcul de la consommation
-            double consommation = finalValue * 1 / 21.71;
-            consommation = Math.floor(consommation * 100) / 100;    /*2 chiffres après la virgule*/
+                // Sinon
+            } else {
+                // Récupérer la valeur de la zone de texte en réel
+                double valeur = Double.parseDouble(editTextDistance.getText().toString());
 
-            // Afficher le résultat
-            new AlertDialog.Builder(getContext())
-                    .setIcon(android.R.drawable.ic_dialog_info)
-                    .setTitle("Calculateur")
-                    .setMessage("Votre trajet coûtera " + prix + " € \nVous consommerez " + consommation + " L")
-                    .setPositiveButton("Ok", (dialogInterface, i) -> {
-                    })
-                    .show();
+                // Calcul du prix
+                double prix = valeur * 1.5 / 21.71;
+                prix = Math.floor(prix * 100) / 100;                    /*2 chiffres après la virgule*/
+
+                // Calcul de la consommation
+                double consommation = valeur * 1 / 21.71;
+                consommation = Math.floor(consommation * 100) / 100;    /*2 chiffres après la virgule*/
+
+                // Afficher le résultat
+                new AlertDialog.Builder(getContext())
+                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .setTitle("Calculateur")
+                        .setMessage("Votre trajet coûtera " + prix + " € \nVous consommerez " + consommation + " L")
+                        .setPositiveButton("Ok", (dialogInterface, i) -> {
+                        })
+                        .show();
+            }
         });
-
     }
 }
