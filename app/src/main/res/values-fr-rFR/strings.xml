@@ -10,4 +10,5 @@
     <string name="calculateur">Caculateur</string>
     <string name="votre_trajet_coûtera">"Votre trajet coûtera "</string>
     <string name="Vous_consommerez">"Vous consommerez "</string>
+    <string name="app_name">Consommation Essence</string>
 </resources>

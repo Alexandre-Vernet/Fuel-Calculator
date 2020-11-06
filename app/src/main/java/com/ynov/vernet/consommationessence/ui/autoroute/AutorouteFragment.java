@@ -1,5 +1,7 @@
 package com.ynov.vernet.consommationessence.ui.autoroute;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -27,7 +29,6 @@ public class AutorouteFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_autoroute, container, false);
         return root;
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

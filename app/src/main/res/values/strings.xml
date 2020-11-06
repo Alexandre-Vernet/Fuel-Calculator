@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Consommation Essence</string>
+    <string name="app_name">Fuel Calculator</string>
     <string name="ville">City</string>
     <string name="autoroute">Highway</string>
     <string name="mixte">Mixed</string>
