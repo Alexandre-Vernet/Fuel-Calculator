@@ -63,12 +63,11 @@ public class MixteFragment extends Fragment {
                 new AlertDialog.Builder(getContext())
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .setTitle(R.string.calculateur)
-                        .setMessage(getString(R.string.votre_trajet_coûtera) + prix + "€\n" + getString(R.string.Vous_consommerez) + consommation + " L")
+                        .setMessage(getString(R.string.votre_trajet_coûtera) + prix + " €\n" + getString(R.string.Vous_consommerez) + consommation + " L")
                         .setPositiveButton("Ok", (dialogInterface, i) -> {
                         })
                         .show();
             }
         });
-
     }
 }
