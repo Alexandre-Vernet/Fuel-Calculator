@@ -42,7 +42,7 @@ public class AutorouteFragment extends Fragment {
             if (editTextDistance.getText().toString().isEmpty()) {
 
                 // Afficher un message d'erreur
-                editTextDistance.setError("Erreur");
+                editTextDistance.setError(getString(R.string.erreur));
                 new Handler().postDelayed(() -> {
                     editTextDistance.setError(null);
                 }, 2000);
@@ -63,8 +63,8 @@ public class AutorouteFragment extends Fragment {
                 // Afficher le résultat
                 new AlertDialog.Builder(getContext())
                         .setIcon(android.R.drawable.ic_dialog_info)
-                        .setTitle("Calculateur")
-                        .setMessage("Votre trajet coûtera " + prix + " € \nVous consommerez " + consommation + " L")
+                        .setTitle(R.string.calculateur)
+                        .setMessage(getString(R.string.votre_trajet_coûtera) + prix + "€\n" + getString(R.string.Vous_consommerez) + consommation + " L")
                         .setPositiveButton("Ok", (dialogInterface, i) -> {
                         })
                         .show();

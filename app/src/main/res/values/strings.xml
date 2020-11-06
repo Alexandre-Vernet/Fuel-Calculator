@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">Consommation Essence</string>
-    <string name="ville">Ville</string>
-    <string name="autoroute">Autoroute</string>
-    <string name="mixte">Mixte</string>
+    <string name="app_name" translatable="false">Consommation Essence</string>
+    <string name="ville">City</string>
+    <string name="autoroute">Highway</string>
+    <string name="mixte">Mixed</string>
+    <string name="entrez_une_distance">Enter a distance</string>
+    <string name="en_km">(in km)</string>
+    <string name="valider">Validate</string>
+    <string name="erreur">Error</string>
+    <string name="calculateur">Calculator</string>
+    <string name="votre_trajet_coûtera">"Your journey will cost "</string>
+    <string name="Vous_consommerez">"You will consume "</string>
 </resources>

@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/escargot"
-        android:title="Ville" />
+        android:title="@string/ville" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/gazelle"
-        android:title="Autoroute" />
+        android:title="@string/autoroute" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/homme"
-        android:title="Mixte" />
+        android:title="@string/mixte" />
 
 </menu>
