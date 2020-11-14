@@ -8,6 +8,5 @@
     <string name="valider">Validate</string>
     <string name="erreur">Error</string>
     <string name="calculateur">Calculator</string>
-    <string name="votre_trajet_coûtera">"Your journey will cost "</string>
-    <string name="Vous_consommerez">"You will consume "</string>
+    <string name="votre_trajet_coutera">Your trip will cost %1$s € \nYou will consume %2$s L</string>
 </resources>

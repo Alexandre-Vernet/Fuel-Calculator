@@ -26,6 +26,7 @@
 
         <EditText
             android:id="@+id/editTextDistance"
+            android:text="5"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"

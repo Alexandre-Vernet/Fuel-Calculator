@@ -1,7 +1,6 @@
 package com.ynov.vernet.consommationessence.ui.autoroute;
 
-import android.content.Context;
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -20,6 +19,7 @@ import com.ynov.vernet.consommationessence.R;
 public class AutorouteFragment extends Fragment {
 
     EditText editTextDistance;
+    double prix, consommation;
 
     private AutorouteViewModel autorouteViewModel;
 
@@ -30,6 +30,7 @@ public class AutorouteFragment extends Fragment {
         return root;
     }
 
+    @SuppressLint("StringFormatMatches")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -54,18 +55,18 @@ public class AutorouteFragment extends Fragment {
                 double valeur = Double.parseDouble(editTextDistance.getText().toString());
 
                 // Calcul du prix
-                double prix = valeur * 1.5 / 21.71;
+                prix = valeur * 1.5 / 21.71;
                 prix = Math.floor(prix * 100) / 100;                    /*2 chiffres après la virgule*/
 
                 // Calcul de la consommation
-                double consommation = valeur * 1 / 21.71;
+                consommation = valeur * 1 / 21.71;
                 consommation = Math.floor(consommation * 100) / 100;    /*2 chiffres après la virgule*/
 
                 // Afficher le résultat
                 new AlertDialog.Builder(getContext())
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .setTitle(R.string.calculateur)
-                        .setMessage(getString(R.string.votre_trajet_coûtera) + prix + " €\n" + getString(R.string.Vous_consommerez) + consommation + " L")
+                        .setMessage(getString(R.string.votre_trajet_coutera, prix, consommation))
                         .setPositiveButton("Ok", (dialogInterface, i) -> {
                         })
                         .show();
