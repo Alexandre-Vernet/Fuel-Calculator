@@ -1,11 +1,14 @@
 package com.ynov.vernet.consommationessence;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editTextDistance = findViewById(R.id.editTextDistance);
 
-        findViewById(R.id.btnValider).setOnClickListener(v -> {
+        checkPreferences();
+
+        findViewById(R.id.btnSubmit).setOnClickListener(v -> {
             if (!editTextDistance.getText().toString().isEmpty()) {
                 double distance = Double.parseDouble(editTextDistance.getText().toString());
 
-                Car car = new Car();
+                Car car = new Car(this);
                 double price = car.calculatePrice(distance);
                 double fuelConsumption = car.calculateFuelConsumption(distance);
 
@@ -36,6 +41,20 @@ public class MainActivity extends AppCompatActivity {
                 new Handler().postDelayed(() -> editTextDistance.setError(null), 2000);
             }
         });
+
+        findViewById(R.id.btnSettings).setOnClickListener(v -> startSettingsActivity());
     }
 
+    private void checkPreferences() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!prefs.contains("fuelPrice") || !prefs.contains("averageConsumption")) {
+            startSettingsActivity();
+        }
+    }
+
+    private void startSettingsActivity() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

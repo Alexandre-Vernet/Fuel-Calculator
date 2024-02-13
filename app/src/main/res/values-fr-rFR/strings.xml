@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ville">Ville</string>
-    <string name="autoroute">Autoroute</string>
-    <string name="mixte">Mixte</string>
     <string name="entrez_une_distance">Entrez une distance</string>
     <string name="en_km">(en km)</string>
     <string name="valider">Valider</string>
@@ -10,4 +7,14 @@
     <string name="calculateur">Caculateur</string>
     <string name="votre_trajet_coutera">Votre trajet coûtera %1$s € \nVous consommerez %2$s L</string>
     <string name="app_name">Consommation Essence</string>
+
+    <!-- Preference Titles -->
+    <string name="car">Caractéristique de la voiture</string>
+    <string name="fuel">Prix de l\'essence</string>
+
+    <!-- Messages Preferences -->
+    <string name="averageConsumption">Consommation moyenne (en L / 100km)</string>
+    <string name="fuelPrice">Prix de l\'essence (en €)</string>
+    <string name="enter_valid_number">Veuillez saisir un nombre valide</string>
+
 </resources>
