@@ -2,8 +2,6 @@ package com.ynov.vernet.fuelcalculator;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
