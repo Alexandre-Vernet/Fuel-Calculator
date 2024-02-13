@@ -1,14 +1,11 @@
 package com.ynov.vernet.consommationessence;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.widget.EditText;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,15 +13,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+
+        EditText editTextDistance = findViewById(R.id.editTextDistance);
+
+        findViewById(R.id.btnValider).setOnClickListener(v -> {
+            if (!editTextDistance.getText().toString().isEmpty()) {
+                double distance = Double.parseDouble(editTextDistance.getText().toString());
+
+                Car car = new Car();
+                double price = car.calculatePrice(distance);
+                double fuelConsumption = car.calculateFuelConsumption(distance);
+
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .setTitle(R.string.calculateur)
+                        .setMessage(getString(R.string.votre_trajet_coutera, String.valueOf(price), String.valueOf(fuelConsumption)))
+                        .setPositiveButton("Ok", (dialogInterface, i) -> {
+                        })
+                        .show();
+            } else {
+                editTextDistance.setError(getString(R.string.erreur));
+                new Handler().postDelayed(() -> editTextDistance.setError(null), 2000);
+            }
+        });
     }
 
 }
