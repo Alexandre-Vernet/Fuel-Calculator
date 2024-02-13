@@ -17,7 +17,8 @@ public class Car extends AppCompatActivity {
     }
 
     public double calculatePrice(double distance) {
-        double price = (distance / 100) * fuelPrice;
+        double fuelConsumption = calculateFuelConsumption(distance);
+        double price = fuelConsumption * fuelPrice;
         price = Math.floor(price * 100) / 100;
         return price;
     }
