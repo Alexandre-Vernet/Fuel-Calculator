@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Consommation Essence"
+rootProject.name = "Fuel Calculator"

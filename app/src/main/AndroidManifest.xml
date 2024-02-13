@@ -7,7 +7,7 @@
             android:label="@string/app_name"
             android:roundIcon="@drawable/icon"
             android:supportsRtl="true"
-            android:theme="@style/Theme.ConsommationEssence">
+            android:theme="@style/Theme.FuelCalculator">
         <activity
                 android:name=".SettingsActivity"
                 android:exported="false" />

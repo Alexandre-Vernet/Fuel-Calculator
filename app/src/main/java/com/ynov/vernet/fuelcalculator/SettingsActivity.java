@@ -1,4 +1,4 @@
-package com.ynov.vernet.consommationessence;
+package com.ynov.vernet.fuelcalculator;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

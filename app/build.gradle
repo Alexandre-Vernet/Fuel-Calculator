@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'com.ynov.vernet.consommationessence'
+    namespace 'com.ynov.vernet.fuelcalculator'
 
     defaultConfig {
         compileSdk 34
         minSdkVersion 28
         targetSdkVersion 34
-        applicationId "com.ynov.vernet.consommationessence"
+        applicationId "com.ynov.vernet.fuelcalculator"
         versionCode 1
         versionName "1.0"
 
