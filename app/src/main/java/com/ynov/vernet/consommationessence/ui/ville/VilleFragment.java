@@ -12,67 +12,45 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.ynov.vernet.consommationessence.Car;
 import com.ynov.vernet.consommationessence.R;
 
 public class VilleFragment extends Fragment {
 
     EditText editTextDistance;
-    double prix, consommation;
-
-    private VilleViewModel villeViewModel;
+    double price, fuelConsumption;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        villeViewModel = new ViewModelProvider(this).get(VilleViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_ville, container, false);
-
-        return root;
+        return inflater.inflate(R.layout.fragment_ville, container, false);
     }
 
-    @SuppressLint("StringFormatMatches")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         editTextDistance = getView().findViewById(R.id.editTextDistance);
 
-        // Au clic du bouton valider
         view.findViewById(R.id.btnValider).setOnClickListener(v -> {
+            if (!editTextDistance.getText().toString().isEmpty()) {
+                double distance = Double.parseDouble(editTextDistance.getText().toString());
 
-            // Si la zone est vide
-            if (editTextDistance.getText().toString().isEmpty()) {
+                Car car = new Car();
+                price = car.calculatePrice(distance);
+                fuelConsumption = car.calculateFuelConsumption(distance);
 
-                // Afficher un message d'erreur
-                editTextDistance.setError(getString(R.string.erreur));
-                new Handler().postDelayed(() -> {
-                    editTextDistance.setError(null);
-                }, 2000);
-
-                // Sinon
-            } else {
-
-                // Récupérer la valeur de la zone de texte en réel
-                double valeur = Double.parseDouble(editTextDistance.getText().toString());
-
-                // Calcul du prix
-                prix = valeur * 1.5 / 12.82;
-                prix = Math.floor(prix * 100) / 100;                    /*2 chiffres après la virgule*/
-
-                // Calcul de la consommation
-                consommation = valeur * 1 / 12.82;
-                consommation = Math.floor(consommation * 100) / 100;    /*2 chiffres après la virgule*/
-
-                // Afficher le résultat
                 new AlertDialog.Builder(getContext())
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .setTitle(R.string.calculateur)
-                        .setMessage(getString(R.string.votre_trajet_coutera, prix, consommation))
+                        .setMessage(getString(R.string.votre_trajet_coutera, String.valueOf(price), String.valueOf(fuelConsumption)))
                         .setPositiveButton("Ok", (dialogInterface, i) -> {
                         })
                         .show();
+            } else {
+                editTextDistance.setError(getString(R.string.erreur));
+                new Handler().postDelayed(() -> editTextDistance.setError(null), 2000);
             }
         });
     }
