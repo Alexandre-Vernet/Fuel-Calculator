@@ -2,6 +2,8 @@ package com.ynov.vernet.fuelcalculator;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
@@ -24,7 +26,7 @@ public class Car extends AppCompatActivity {
     }
 
     public double calculateFuelConsumption(double distance) {
-        double fuelConsumption = (distance / 100) * averageConsumption;
+        double fuelConsumption = (distance * averageConsumption) / 100;
         fuelConsumption = Math.floor(fuelConsumption * 100) / 100;
         return fuelConsumption;
     }
