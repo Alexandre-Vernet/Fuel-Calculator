@@ -1,7 +1,9 @@
 # Fuel-Calculator
 
-<img src="https://github.com/Alexandre-Vernet/Fuel-Calculator/assets/72151831/1f740d69-7d0b-443d-8561-88c7db361b35"
-  width="400px">
+<p align="center">
+  <img src="https://github.com/Alexandre-Vernet/Fuel-Calculator/assets/72151831/1f740d69-7d0b-443d-8561-88c7db361b35"
+    width="300px">
+</p>
 
 
 
